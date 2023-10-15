@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api_example/screens/post_screen.dart';
 
+import 'albums_screen.dart';
 import 'comments_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
@@ -31,6 +32,11 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>const CommentsScreen()));
             }, child: const Text('Comments Model show',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const AlbumsScreen()));
+            }, child: const Text('Albums Model show',style: TextStyle(color: Colors.white),)),
           ],
         ),
       ),
