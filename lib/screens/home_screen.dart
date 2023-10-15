@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rest_api_example/screens/post_screen.dart';
+
+import 'comments_screen.dart';
 class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
   @override
@@ -19,9 +21,16 @@ class _HomeScreenState extends State<HomeScreen> {
           crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(onPressed: (){
+            ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>const PostScreen()));
-            }, child: const Text('Post Model'))
+            }, child: const Text('Posts Model show',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const CommentsScreen()));
+            }, child: const Text('Comments Model show',style: TextStyle(color: Colors.white),)),
           ],
         ),
       ),
