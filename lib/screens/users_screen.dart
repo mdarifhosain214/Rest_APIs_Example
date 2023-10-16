@@ -37,15 +37,22 @@ class _UsersScreenState extends State<UsersScreen> {
         child: FutureBuilder(
           future: getUser(),
           builder: (context,snapshot){
-            return ListView.builder(
+            if(!snapshot.hasData){
+              return const Center(child: CircularProgressIndicator(),);
+            }
+            return ListView.separated(
               itemCount: userList.length,
-                itemBuilder: (context,index){
-              return ListTile(
-                leading: Text(userList[index].address!.city.toString()),
-                title: Text(userList[index].name.toString()),
-                subtitle: Text(userList[index].email.toString()),
-              );
-            });
+              itemBuilder: (context,index){
+                return ListTile(
+                  leading: Text(userList[index].address!.city.toString()),
+                  title: Text(userList[index].name.toString()),
+                  subtitle: Text(userList[index].email.toString()),
+                );
+              },
+              separatorBuilder: (context,index){
+                return const Divider();
+              },
+            );
           },
         ),
       ),

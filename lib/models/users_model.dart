@@ -24,7 +24,7 @@ class UsersModel {
     username = json['username'];
     email = json['email'];
     address =
-    json['address'] != null ? new Address.fromJson(json['address']) : null;
+    json['address'] != null ?  Address.fromJson(json['address']) : null;
     phone = json['phone'];
     website = json['website'];
     company =
