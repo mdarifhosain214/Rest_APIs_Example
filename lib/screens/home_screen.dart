@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:rest_api_example/screens/photos_screen.dart';
 import 'package:rest_api_example/screens/post_screen.dart';
+import 'package:rest_api_example/screens/todos_screen.dart';
+import 'package:rest_api_example/screens/users_screen.dart';
 
 import 'albums_screen.dart';
 import 'comments_screen.dart';
@@ -37,6 +40,21 @@ class _HomeScreenState extends State<HomeScreen> {
                 onPressed: (){
               Navigator.push(context, MaterialPageRoute(builder: (context)=>const AlbumsScreen()));
             }, child: const Text('Albums Model show',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const PhotosScreen()));
+            }, child: const Text('Photos Model show',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const ToDosScreen()));
+            }, child: const Text('Todos Model show',style: TextStyle(color: Colors.white),)),
+            ElevatedButton(
+              style: ButtonStyle(backgroundColor: MaterialStateProperty.all(Colors.teal)),
+                onPressed: (){
+              Navigator.push(context, MaterialPageRoute(builder: (context)=>const UsersScreen()));
+            }, child: const Text('Users Model show',style: TextStyle(color: Colors.white),)),
           ],
         ),
       ),
